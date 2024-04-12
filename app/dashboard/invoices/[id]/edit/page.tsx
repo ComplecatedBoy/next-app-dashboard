@@ -4,9 +4,9 @@ import { fetchInvoiceById, fetchCustomers } from '@/app/lib/data';
 import { notFound } from 'next/navigation';
  
 export default async function Page({params}:{params:{id:string}}) {
-  const invoice=await fetchInvoiceById(id);
     const id=params.id;
     const customers=await fetchCustomers();
+    const invoice=await fetchInvoiceById(id);
 
     if(!invoice){
        notFound();
